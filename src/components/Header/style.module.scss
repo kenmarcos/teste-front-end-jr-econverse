@@ -1,0 +1,45 @@
+@use "../../styles/variables";
+@use "../../styles/mixins";
+
+.container {
+  @include mixins.box(100%, 144px);
+  color: variables.$text-secondary-color;
+
+  div {
+    max-width: 1280px;
+    margin: 0 auto;
+    height: 100%;
+  }
+}
+
+.headerTop {
+  display: none;
+
+  @include mixins.tablet() {
+    display: block;
+
+    ul {
+      @include mixins.flex-center-horiz();
+      gap: 119px;
+      padding: 6px 0;
+
+      li {
+        @include mixins.flex-center-vert();
+        gap: 9px;
+        font-size: 12px;
+        font-weight: 500;
+
+        span {
+          color: variables.$primary-color;
+          font-weight: 600;
+        }
+      }
+    }
+  }
+}
+
+.mainHeader {
+}
+
+.headerNavbar {
+}
