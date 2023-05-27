@@ -5,9 +5,14 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   adorment?: ReactNode;
 }
 
-const Input = ({ type = "text", adorment = null, ...rest }: InputProps) => {
+const Input = ({
+  type = "text",
+  className = "default",
+  adorment = null,
+  ...rest
+}: InputProps) => {
   return (
-    <div className={styles.container}>
+    <div className={styles[className]}>
       <input type={type} {...rest} />
       {adorment}
     </div>

@@ -86,6 +86,7 @@ const Header = () => {
 
           <div>
             <Input
+              className="search"
               placeholder="O que você está buscando?"
               adorment={
                 <Button>

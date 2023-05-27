@@ -1,0 +1,146 @@
+@use "../../styles/variables";
+@use "../../styles/mixins";
+
+.container {
+  width: 100vw;
+  background-color: #2a2a2a;
+  color: variables.$white-color;
+}
+
+.mainFooter {
+  & > div {
+    display: flex;
+    justify-content: center;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 59px 24px;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    @include mixins.desktop() {
+      gap: unset;
+      justify-content: space-between;
+      padding: 59px 93px 30px 93px;
+    }
+  }
+}
+
+.information {
+  @include mixins.flex-center-horiz;
+  gap: 56px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  flex-wrap: wrap;
+
+  @include mixins.large() {
+    align-items: start;
+    flex-direction: row;
+    gap: unset;
+  }
+
+  section h5 {
+    font-size: 0.813rem;
+    margin-bottom: 24px;
+  }
+
+  section ul li {
+    line-height: 32px;
+  }
+}
+
+.about {
+  @include mixins.large() {
+    margin-right: 93px;
+  }
+
+  h5 {
+    text-transform: none;
+  }
+
+  div {
+    @include mixins.flex-center-vert;
+    justify-content: space-between;
+    margin-top: 70px;
+  }
+}
+
+.info {
+  @include mixins.large() {
+    margin-right: 47px;
+  }
+}
+
+.payment {
+}
+
+.contact {
+}
+
+.contactBox {
+  max-width: 380px;
+  background-color: variables.$white-color;
+  border-radius: 10px;
+  color: variables.$text-primary-color;
+  padding: 20px 14px;
+
+  @include mixins.large {
+    padding: 40px 29px;
+  }
+
+  & > div {
+    h3 {
+      font-size: 21px;
+      font-weight: 700;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+
+      span {
+        font-size: 18px;
+        font-weight: 300;
+      }
+    }
+
+    p {
+      margin-bottom: 31px;
+      text-align: center;
+    }
+
+    div {
+      @include mixins.flex-center-horiz;
+      gap: 9px;
+
+      button {
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+.footerBottom {
+  border-top: 1px solid variables.$white-color;
+
+  & > div {
+    @include mixins.flex-center-column();
+    justify-content: space-between;
+    gap: 16px;
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 16px 24px;
+
+    @include mixins.large() {
+      flex-direction: row;
+      padding: 19px 93px;
+    }
+
+    p {
+      font-size: 0.625rem;
+      text-transform: uppercase;
+      max-width: 698px;
+    }
+
+    div {
+      @include mixins.flex-center();
+      gap: 32px;
+    }
+  }
+}
