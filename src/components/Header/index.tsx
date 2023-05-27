@@ -15,6 +15,36 @@ import Logotype from "/logotype.svg";
 
 import styles from "./header.module.scss";
 
+const informations = [
+  {
+    id: 1,
+    icon: <ShieldCheckIcon />,
+    text: (
+      <>
+        Compra <span>100% segura</span>
+      </>
+    ),
+  },
+  {
+    id: 2,
+    icon: <TruckIcon />,
+    text: (
+      <>
+        <span>Frete grátis</span> acima de R$ 200
+      </>
+    ),
+  },
+  {
+    id: 3,
+    icon: <CreditCardIcon />,
+    text: (
+      <>
+        <span>Parcele</span> suas compras
+      </>
+    ),
+  },
+];
+
 const mainHeaderNavigations = [
   { icon: <BoxIcon />, name: "orders" },
   { icon: <HeartIcon />, name: "wishes" },
@@ -38,24 +68,12 @@ const Header = () => {
       <div className={styles.wrapper}>
         <section className={styles.headerTop}>
           <ul>
-            <li>
-              <ShieldCheckIcon />
-              <p>
-                Compra <span>100% segura</span>
-              </p>
-            </li>
-            <li>
-              <TruckIcon />
-              <p>
-                <span>Frete grátis</span> acima de R$ 200
-              </p>
-            </li>
-            <li>
-              <CreditCardIcon />
-              <p>
-                <span>Parcele</span> suas compras
-              </p>
-            </li>
+            {informations.map((info) => (
+              <li key={info.id}>
+                {info.icon}
+                <p>{info.text}</p>
+              </li>
+            ))}
           </ul>
           <div></div>
           <div></div>
