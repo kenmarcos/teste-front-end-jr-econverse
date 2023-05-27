@@ -80,6 +80,7 @@
     justify-content: center;
     flex-wrap: wrap;
     column-gap: 24px;
+    row-gap: 8px;
 
     @include mixins.tablet() {
       justify-content: space-between;
@@ -89,11 +90,6 @@
       @include mixins.flex-center-horiz();
       font-size: 0.75rem;
       font-weight: 600;
-      padding-bottom: 8px;
-
-      @include mixins.desktop() {
-        padding: 0;
-      }
 
       a {
         @include mixins.flex-center-vert();
