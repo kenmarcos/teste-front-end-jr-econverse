@@ -10,6 +10,7 @@ import {
   CrownIcon,
 } from "../../icons";
 import Input from "../Input";
+import Button from "../Button";
 import Logotype from "/logotype.svg";
 
 import styles from "./header.module.scss";
@@ -69,9 +70,9 @@ const Header = () => {
             <Input
               placeholder="O que você está buscando?"
               adorment={
-                <button>
+                <Button>
                   <MagnifyingGlassIcon />
-                </button>
+                </Button>
               }
             />
           </div>

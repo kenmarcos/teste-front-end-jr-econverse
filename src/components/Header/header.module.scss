@@ -21,6 +21,7 @@
 .headerTop {
   display: none;
   padding: 6px 0;
+  border-bottom: 1px solid #f0f0f0;
 
   @include mixins.tablet() {
     display: block;
@@ -48,9 +49,10 @@
   @include mixins.flex-center();
   gap: 16px;
   flex-wrap: wrap;
-  padding: 7px 0 14.36px;
 
   a {
+    margin: 7px 0 14.36px;
+
     img {
       max-width: 139px;
       max-height: 50.64px;
@@ -71,6 +73,7 @@
 
 .headerNavbar {
   padding: 10px 0;
+  border-top: 1px solid #f0f0f0;
 
   ul {
     @include mixins.flex-center-horiz();

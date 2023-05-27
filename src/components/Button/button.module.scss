@@ -1,0 +1,35 @@
+@use "../../styles/variables";
+
+@mixin btn() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1rem;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.2s;
+  border-width: 2px;
+  border-style: solid;
+}
+
+.default {
+  border: 0;
+  background-color: transparent;
+
+  &:hover {
+    filter: brightness(0.6);
+    transform: scale(1.1);
+  }
+}
+
+.primary {
+  @include btn();
+  border-color: variables.$primary-color;
+  background-color: variables.$primary-color;
+  color: variables.$white-color;
+  gap: 1rem;
+
+  &:hover {
+    filter: brightness(0.9);
+  }
+}
