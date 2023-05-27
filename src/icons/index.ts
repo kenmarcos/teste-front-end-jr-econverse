@@ -7,6 +7,9 @@ import UserCircleIcon from "./UserCircleIcon";
 import ShoppinCartIcon from "./ShoppingCartIcon";
 import MagnifyingGlassIcon from "./MagnifyingGlassIcon";
 import CrownIcon from "./CrownIcon";
+import FacebookIcon from "./FacebookIcon";
+import InstagramIcon from "./InstagramIcon";
+import YoutubeIcon from "./YoutubeIcon";
 
 export {
   ShieldCheckIcon,
@@ -18,4 +21,7 @@ export {
   ShoppinCartIcon,
   MagnifyingGlassIcon,
   CrownIcon,
+  FacebookIcon,
+  InstagramIcon,
+  YoutubeIcon,
 };
