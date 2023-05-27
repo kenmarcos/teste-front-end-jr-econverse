@@ -14,7 +14,8 @@ html {
   }
 }
 
-body {
+body,
+input {
   font: 400 1rem variables.$font-family;
   color: variables.$text-primary-color;
 }
