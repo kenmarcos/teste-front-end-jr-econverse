@@ -2,19 +2,25 @@
 @use "../../styles/mixins";
 
 .container {
-  @include mixins.box(100%, 144px);
+  width: 100vw;
+  min-height: 144px;
   color: variables.$text-secondary-color;
+}
 
-  div {
-    max-width: 1280px;
-    margin: 0 auto;
-    height: 100%;
+.wrapper {
+  max-width: 1280px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 24px;
+
+  @include mixins.large() {
     padding: 0 56px;
   }
 }
 
 .headerTop {
   display: none;
+  padding: 6px 0;
 
   @include mixins.tablet() {
     display: block;
@@ -22,7 +28,6 @@
     ul {
       @include mixins.flex-center-horiz();
       gap: 119px;
-      padding: 6px 0;
 
       li {
         @include mixins.flex-center-vert();
@@ -41,6 +46,8 @@
 
 .mainHeader {
   @include mixins.flex-center();
+  gap: 16px;
+  flex-wrap: wrap;
   padding: 7px 0 14.36px;
 
   a {
@@ -48,6 +55,10 @@
       max-width: 139px;
       max-height: 50.64px;
     }
+  }
+
+  div {
+    flex: 1;
   }
 
   nav {
@@ -59,4 +70,33 @@
 }
 
 .headerNavbar {
+  padding: 10px 0;
+
+  ul {
+    @include mixins.flex-center-horiz();
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+
+    @include mixins.tablet() {
+      justify-content: space-between;
+    }
+
+    li {
+      @include mixins.flex-center-horiz();
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding-bottom: 8px;
+
+      @include mixins.desktop() {
+        padding: 0;
+      }
+
+      a {
+        @include mixins.flex-center-vert();
+        gap: 12px;
+        text-transform: uppercase;
+      }
+    }
+  }
 }

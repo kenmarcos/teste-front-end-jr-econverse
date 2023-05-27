@@ -6,10 +6,13 @@ import {
   ShoppinCartIcon,
   TruckIcon,
   UserCircleIcon,
+  MagnifyingGlassIcon,
+  CrownIcon,
 } from "../../icons";
-import Logotype from "/public/logotype.svg";
+import Input from "../Input";
+import Logotype from "/logotype.svg";
 
-import styles from "./style.module.scss";
+import styles from "./header.module.scss";
 
 const mainHeaderNavigations = [
   { icon: <BoxIcon />, name: "orders" },
@@ -18,10 +21,20 @@ const mainHeaderNavigations = [
   { icon: <ShoppinCartIcon />, name: "cart" },
 ];
 
+const headerNavbarNavigations = [
+  { text: "Todas as categorias" },
+  { text: "Supermercado" },
+  { text: "Livros" },
+  { text: "Moda" },
+  { text: "Lançamentos" },
+  { text: "Ofertas do dia" },
+  { icon: <CrownIcon />, text: "Assinatura" },
+];
+
 const Header = () => {
   return (
     <header className={styles.container}>
-      <div>
+      <div className={styles.wrapper}>
         <section className={styles.headerTop}>
           <ul>
             <li>
@@ -51,9 +64,18 @@ const Header = () => {
           <a href="/">
             <img src={Logotype} alt="VTEX logotype" />
           </a>
+
           <div>
-            <input type="text" />
+            <Input
+              placeholder="O que você está buscando?"
+              adorment={
+                <button>
+                  <MagnifyingGlassIcon />
+                </button>
+              }
+            />
           </div>
+
           <nav>
             <ul>
               {mainHeaderNavigations.map((navigation) => (
@@ -65,7 +87,18 @@ const Header = () => {
           </nav>
         </section>
 
-        <nav className={styles.headerNavbar}></nav>
+        <nav className={styles.headerNavbar}>
+          <ul>
+            {headerNavbarNavigations.map((navigation) => (
+              <li key={navigation.text}>
+                <a>
+                  {navigation?.icon}
+                  {navigation.text}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
       </div>
     </header>
   );
