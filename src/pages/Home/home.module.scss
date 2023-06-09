@@ -4,71 +4,91 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
+}
 
-  .banner {
-    display: none;
+.banner {
+  display: none;
 
-    @include mixins.tablet {
+  @include mixins.tablet {
+    display: block;
+  }
+
+  position: relative;
+
+  img {
+    @include mixins.box(100%);
+    object-fit: cover;
+  }
+
+  .gradient {
+    @include mixins.box(100%);
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 85.04%);
+    mix-blend-mode: normal;
+    opacity: 0.8;
+  }
+
+  .bannerDescription {
+    @include mixins.flex-center-column;
+    @include mixins.box(100%);
+    color: variables.$white-color;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 25px 45px;
+    gap: 16px;
+
+    h2 {
+      font-size: 38px;
+      font-weight: 600;
+      line-height: 72px;
+    }
+
+    h3 {
+      font-size: 26px;
+      font-weight: 600;
+    }
+
+    button {
+      padding: 16px 58px;
+      font-size: 18px;
+    }
+
+    @include mixins.desktop {
       display: block;
-    }
-
-    position: relative;
-
-    img {
-      @include mixins.box(100%);
-      object-fit: cover;
-    }
-
-    .gradient {
-      @include mixins.box(100%);
-      position: absolute;
-      top: 0;
-      left: 0;
-      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 85.04%);
-      mix-blend-mode: normal;
-      opacity: 0.8;
-    }
-
-    .bannerDescription {
-      @include mixins.flex-center-column;
-      @include mixins.box(100%);
-      color: variables.$white-color;
-      position: absolute;
-      top: 0;
-      left: 0;
-      padding: 25px 45px;
-      gap: 16px;
+      padding: 50px 90px;
 
       h2 {
-        font-size: 38px;
-        font-weight: 600;
-        line-height: 72px;
+        font-size: 48px;
+        max-width: 700px;
+        margin-bottom: 16px;
       }
 
       h3 {
-        font-size: 26px;
-        font-weight: 600;
+        font-size: 36px;
+        margin-bottom: 35px;
       }
+    }
+  }
+}
 
-      button {
-        padding: 16px 58px;
-        font-size: 18px;
-      }
+.navigation {
+  padding: 34px 0;
 
-      @include mixins.desktop {
-        display: block;
-        padding: 50px 90px;
+  nav {
+    @include mixins.customContainer;
 
-        h2 {
-          font-size: 48px;
-          max-width: 700px;
-          margin-bottom: 16px;
-        }
+    ul {
+      @include mixins.flex-center-vert;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
 
-        h3 {
-          font-size: 36px;
-          margin-bottom: 35px;
-        }
+      li {
+        @include mixins.flex-center-column;
+        gap: 22px;
       }
     }
   }
