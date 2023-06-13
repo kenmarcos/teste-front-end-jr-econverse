@@ -1,0 +1,82 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.container {
+  padding: 34px 0;
+
+  & > div {
+    @include mixins.customContainer;
+  }
+}
+
+.header {
+  margin-bottom: 32px;
+
+  & > div {
+    @include mixins.flex-center;
+    gap: 34px;
+
+    &:first-child {
+      hr {
+        display: none;
+        flex: 1;
+        height: 0;
+
+        @include mixins.tablet {
+          display: block;
+        }
+      }
+
+      h4 {
+        font-size: 1.875rem;
+        text-align: center;
+        color: variables.$primary-color;
+      }
+    }
+
+    &:last-child {
+      a {
+        font-weight: bold;
+        margin-top: 4px;
+
+        &:hover {
+          color: variables.$primary-color;
+        }
+      }
+    }
+  }
+}
+
+.carousel {
+}
+
+@mixin slick-arrows {
+  display: none;
+
+  @include mixins.large {
+    display: block;
+
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    cursor: pointer;
+
+    svg {
+      fill: variables.$text-primary-color;
+
+      &:hover {
+        fill: variables.$primary-color;
+      }
+    }
+  }
+}
+
+.prevArrow {
+  @include slick-arrows;
+  left: -25px;
+}
+
+.nextArrow {
+  @include slick-arrows;
+  right: -25px;
+}

@@ -1,3 +1,6 @@
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
+
 import Banner from "../../assets/img/banner.png";
 import Button from "../../components/Button";
 import devices from "../../assets/img/devices.svg";
@@ -7,6 +10,7 @@ import tools from "../../assets/img/tools.svg";
 import care from "../../assets/img/care.svg";
 import running from "../../assets/img/running.svg";
 import fashion from "../../assets/img/fashion.svg";
+import Showcase from "../../components/Showcase";
 
 import styles from "./home.module.scss";
 
@@ -20,7 +24,32 @@ const navigation = [
   { id: 7, icon: fashion, name: "Moda" },
 ];
 
+interface Product {
+  productName: string;
+  descriptionShort: string;
+  photo: string;
+  price: string;
+}
+
+interface Products {
+  success: string;
+  products: Product[];
+}
+
+const getProducts = async () => {
+  const response = await axios.get<Products>(
+    "https://app.econverse.com.br/teste-front-end/junior/tecnologia/lista-produtos/produtos.json"
+  );
+
+  return response.data.products;
+};
+
 const Home = () => {
+  const { data } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+
   return (
     <div className={styles.container}>
       <section className={styles.banner}>
@@ -47,6 +76,8 @@ const Home = () => {
           </ul>
         </nav>
       </section>
+
+      <Showcase products={data} />
     </div>
   );
 };
