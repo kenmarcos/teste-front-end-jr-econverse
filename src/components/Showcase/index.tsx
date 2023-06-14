@@ -2,6 +2,7 @@ import Slider, { CustomArrowProps } from "react-slick";
 
 import { NextArrowIcon, PrevArrowIcon } from "../../icons";
 import ProductCard from "../ProductCard";
+import ProductCardSkeleton from "../ProductCardSkeleton";
 import { Product } from "../../types";
 
 import styles from "./showcase.module.scss";
@@ -39,9 +40,10 @@ const sliderSettings = {
 
 interface ShowcaseProps {
   products?: Product[];
+  isLoading: boolean;
 }
 
-const Showcase = ({ products }: ShowcaseProps) => {
+const Showcase = ({ products, isLoading }: ShowcaseProps) => {
   return (
     <section className={styles.container}>
       <div>
@@ -59,9 +61,15 @@ const Showcase = ({ products }: ShowcaseProps) => {
 
         <div className={styles.carousel}>
           <Slider {...sliderSettings}>
-            {products?.map((product) => (
-              <ProductCard key={product.productName} {...product} />
-            ))}
+            {isLoading &&
+              [...Array(4)].map((_, index) => (
+                <ProductCardSkeleton key={index} />
+              ))}
+
+            {products &&
+              products.map((product) => (
+                <ProductCard key={product.productName} {...product} />
+              ))}
           </Slider>
         </div>
       </div>

@@ -3,6 +3,8 @@ import axios from "axios";
 
 import Banner from "../../assets/img/banner.png";
 import Button from "../../components/Button";
+import Showcase from "../../components/Showcase";
+import { Product } from "../../types";
 import devices from "../../assets/img/devices.svg";
 import market from "../../assets/img/market.svg";
 import drinks from "../../assets/img/drinks.svg";
@@ -10,7 +12,6 @@ import tools from "../../assets/img/tools.svg";
 import care from "../../assets/img/care.svg";
 import running from "../../assets/img/running.svg";
 import fashion from "../../assets/img/fashion.svg";
-import Showcase from "../../components/Showcase";
 
 import styles from "./home.module.scss";
 
@@ -23,13 +24,6 @@ const navigation = [
   { id: 6, icon: running, name: "Esportes e Fitness" },
   { id: 7, icon: fashion, name: "Moda" },
 ];
-
-interface Product {
-  productName: string;
-  descriptionShort: string;
-  photo: string;
-  price: string;
-}
 
 interface Products {
   success: string;
@@ -45,7 +39,7 @@ const getProducts = async () => {
 };
 
 const Home = () => {
-  const { data } = useQuery({
+  const { data, isLoading } = useQuery({
     queryKey: ["products"],
     queryFn: getProducts,
   });
@@ -77,7 +71,7 @@ const Home = () => {
         </nav>
       </section>
 
-      <Showcase products={data} />
+      <Showcase products={data} isLoading={isLoading} />
     </div>
   );
 };
