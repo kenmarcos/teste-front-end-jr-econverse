@@ -1,6 +1,8 @@
 import Slider, { CustomArrowProps } from "react-slick";
 
 import { NextArrowIcon, PrevArrowIcon } from "../../icons";
+import ProductCard from "../ProductCard";
+import { Product } from "../../types";
 
 import styles from "./showcase.module.scss";
 import "slick-carousel/slick/slick.css";
@@ -10,16 +12,30 @@ const sliderSettings = {
   infinite: true,
   speed: 500,
   slidesToShow: 4,
+  initialSlide: 0,
   nextArrow: <NextArrow />,
   prevArrow: <PrevArrow />,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3.5,
+      },
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2.5,
+      },
+    },
+    {
+      breakpoint: 425,
+      settings: {
+        slidesToShow: 1.5,
+      },
+    },
+  ],
 };
-
-interface Product {
-  productName: string;
-  descriptionShort: string;
-  photo: string;
-  price: string;
-}
 
 interface ShowcaseProps {
   products?: Product[];
@@ -44,9 +60,7 @@ const Showcase = ({ products }: ShowcaseProps) => {
         <div className={styles.carousel}>
           <Slider {...sliderSettings}>
             {products?.map((product) => (
-              <div key={product.productName}>
-                <img src={product.photo} alt={product.productName} />
-              </div>
+              <ProductCard key={product.productName} {...product} />
             ))}
           </Slider>
         </div>

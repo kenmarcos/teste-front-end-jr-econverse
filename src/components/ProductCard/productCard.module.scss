@@ -1,0 +1,51 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.container {
+  padding: 1rem;
+  box-shadow: 0px 3px 19px rgba(0, 0, 0, 0.22);
+  border-radius: 10px;
+  max-width: 270px;
+  margin: 16px;
+}
+
+.image {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.description {
+  h4 {
+    width: 85%;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    font-weight: 300;
+    margin: 16px 0;
+    line-height: 22px;
+    min-height: 44px;
+  }
+
+  h3 {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+
+  small {
+    color: variables.$primary-color;
+  }
+}
+
+.action {
+  button {
+    width: 100%;
+    margin-top: 16px;
+  }
+}
