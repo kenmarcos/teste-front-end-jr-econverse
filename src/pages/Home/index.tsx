@@ -14,6 +14,8 @@ import running from "../../assets/img/running.svg";
 import fashion from "../../assets/img/fashion.svg";
 
 import styles from "./home.module.scss";
+import AdCard from "../../components/AdCard";
+import Advertisements from "../../components/Advertisements";
 
 const navigation = [
   { id: 1, icon: devices, name: "Tecnologia" },
@@ -70,6 +72,20 @@ const Home = () => {
           </ul>
         </nav>
       </section>
+
+      <Showcase products={data} isLoading={isLoading} />
+
+      <Advertisements>
+        <AdCard title="Produtos" />
+        <AdCard title="Produtos" />
+      </Advertisements>
+
+      <Showcase products={data} isLoading={isLoading} />
+
+      <Advertisements>
+        <AdCard title="Parceiros" />
+        <AdCard title="Parceiros" />
+      </Advertisements>
 
       <Showcase products={data} isLoading={isLoading} />
     </div>
