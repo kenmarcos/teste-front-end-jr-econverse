@@ -20,18 +20,21 @@ const sliderSettings = {
     {
       breakpoint: 1024,
       settings: {
+        infinite: false,
         slidesToShow: 3.5,
       },
     },
     {
       breakpoint: 768,
       settings: {
+        infinite: false,
         slidesToShow: 2.5,
       },
     },
     {
       breakpoint: 425,
       settings: {
+        infinite: false,
         slidesToShow: 1.5,
       },
     },
@@ -59,19 +62,17 @@ const Showcase = ({ products, isLoading }: ShowcaseProps) => {
           </div>
         </header>
 
-        <div className={styles.carousel}>
-          <Slider {...sliderSettings}>
-            {isLoading &&
-              [...Array(4)].map((_, index) => (
-                <ProductCardSkeleton key={index} />
-              ))}
+        <Slider {...sliderSettings}>
+          {isLoading &&
+            [...Array(4)].map((_, index) => (
+              <ProductCardSkeleton key={index} />
+            ))}
 
-            {products &&
-              products.map((product) => (
-                <ProductCard key={product.productName} {...product} />
-              ))}
-          </Slider>
-        </div>
+          {products &&
+            products.map((product) => (
+              <ProductCard key={product.productName} {...product} />
+            ))}
+        </Slider>
       </div>
     </section>
   );

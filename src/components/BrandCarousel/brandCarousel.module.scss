@@ -1,0 +1,61 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+@mixin slick-arrows {
+  display: none;
+
+  @include mixins.large {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    border-radius: 50%;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.18);
+    background-color: variables.$white-color;
+    width: 56px;
+    height: 56px;
+    z-index: 10;
+    cursor: pointer;
+
+    svg {
+      fill: variables.$text-primary-color;
+
+      &:hover {
+        fill: variables.$primary-color;
+      }
+    }
+  }
+}
+
+.brand {
+  border-radius: 50%;
+  display: flex;
+  max-width: 211px;
+  max-height: 211px;
+  aspect-ratio: 1/1;
+  margin: 16px;
+  box-shadow: 0px 7px 20px rgba(0, 0, 0, 0.13);
+
+  img {
+    width: 100%;
+    padding: 20px;
+    transition: transform 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+  }
+}
+
+.prevArrow {
+  @include slick-arrows;
+  @include mixins.flex-center;
+
+  left: 25px;
+}
+
+.nextArrow {
+  @include slick-arrows;
+  @include mixins.flex-center;
+
+  right: 25px;
+}

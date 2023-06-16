@@ -4,6 +4,8 @@
 .container {
   max-width: 1440px;
   margin: 0 auto;
+  @include mixins.flex-column;
+  gap: 60px;
 }
 
 .banner {
@@ -75,13 +77,11 @@
 }
 
 .navigation {
-  padding: 34px 0;
-
   nav {
     @include mixins.customContainer;
 
     ul {
-      @include mixins.flex-center-vert;
+      display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
       gap: 8px;
@@ -90,6 +90,19 @@
         @include mixins.flex-center-column;
         gap: 22px;
       }
+    }
+  }
+}
+
+.brands {
+  & > div {
+    @include mixins.customContainer;
+
+    h4 {
+      font-size: 1.875rem;
+      text-align: center;
+      color: variables.$primary-color;
+      margin-bottom: 52px;
     }
   }
 }

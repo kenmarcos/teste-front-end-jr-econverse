@@ -3,7 +3,6 @@
 .container {
   @include mixins.customContainer;
   @include mixins.flex-center;
-  padding: 34px 0;
 
   flex-wrap: wrap;
   gap: 70px;

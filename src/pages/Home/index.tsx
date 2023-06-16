@@ -5,6 +5,9 @@ import Banner from "../../assets/img/banner.png";
 import Button from "../../components/Button";
 import Showcase from "../../components/Showcase";
 import { Product } from "../../types";
+import Advertisements from "../../components/Advertisements";
+import AdCard from "../../components/AdCard";
+import BrandCarousel from "../../components/BrandCarousel";
 import devices from "../../assets/img/devices.svg";
 import market from "../../assets/img/market.svg";
 import drinks from "../../assets/img/drinks.svg";
@@ -14,8 +17,8 @@ import running from "../../assets/img/running.svg";
 import fashion from "../../assets/img/fashion.svg";
 
 import styles from "./home.module.scss";
-import AdCard from "../../components/AdCard";
-import Advertisements from "../../components/Advertisements";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 const navigation = [
   { id: 1, icon: devices, name: "Tecnologia" },
@@ -86,6 +89,14 @@ const Home = () => {
         <AdCard title="Parceiros" />
         <AdCard title="Parceiros" />
       </Advertisements>
+
+      <section className={styles.brands}>
+        <div>
+          <h4>Navegue por marcas</h4>
+
+          <BrandCarousel />
+        </div>
+      </section>
 
       <Showcase products={data} isLoading={isLoading} />
     </div>
