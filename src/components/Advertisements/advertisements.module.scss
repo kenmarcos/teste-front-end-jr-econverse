@@ -1,0 +1,9 @@
+@use "../../styles/mixins";
+
+.container {
+  @include mixins.customContainer;
+  @include mixins.flex-center;
+
+  flex-wrap: wrap;
+  gap: 70px;
+}

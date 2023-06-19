@@ -15,6 +15,7 @@
 .default {
   border: 0;
   background-color: transparent;
+  transition: transform 0.3s;
 
   &:hover {
     filter: brightness(0.6);
@@ -31,5 +32,19 @@
 
   &:hover {
     filter: brightness(0.9);
+  }
+}
+
+.secondary {
+  border: 0;
+  background: #f4f4f4;
+  padding: 34px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 11px rgba(0, 0, 0, 0.13);
+  transition: transform 0.3s;
+
+  &:hover {
+    filter: brightness(0.6);
+    transform: scale(1.1);
   }
 }

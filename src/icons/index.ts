@@ -10,6 +10,8 @@ import CrownIcon from "./CrownIcon";
 import FacebookIcon from "./FacebookIcon";
 import InstagramIcon from "./InstagramIcon";
 import YoutubeIcon from "./YoutubeIcon";
+import PrevArrowIcon from "./PrevArrowIcon";
+import NextArrowIcon from "./NextArrowIcon";
 
 export {
   ShieldCheckIcon,
@@ -24,4 +26,6 @@ export {
   FacebookIcon,
   InstagramIcon,
   YoutubeIcon,
+  PrevArrowIcon,
+  NextArrowIcon,
 };

@@ -46,20 +46,20 @@ const informations = [
 ];
 
 const mainHeaderNavigations = [
-  { icon: <BoxIcon />, name: "orders" },
-  { icon: <HeartIcon />, name: "wishes" },
-  { icon: <UserCircleIcon />, name: "account" },
-  { icon: <ShoppinCartIcon />, name: "cart" },
+  { id: 1, icon: <BoxIcon />, name: "orders" },
+  { id: 2, icon: <HeartIcon />, name: "wishes" },
+  { id: 3, icon: <UserCircleIcon />, name: "account" },
+  { id: 4, icon: <ShoppinCartIcon />, name: "cart" },
 ];
 
 const headerNavbarNavigations = [
-  { text: "Todas as categorias" },
-  { text: "Supermercado" },
-  { text: "Livros" },
-  { text: "Moda" },
-  { text: "Lançamentos" },
-  { text: "Ofertas do dia" },
-  { icon: <CrownIcon />, text: "Assinatura" },
+  { id: 1, text: "Todas as categorias" },
+  { id: 2, text: "Supermercado" },
+  { id: 3, text: "Livros" },
+  { id: 4, text: "Moda" },
+  { id: 5, text: "Lançamentos" },
+  { id: 6, text: "Ofertas do dia" },
+  { id: 7, icon: <CrownIcon />, text: "Assinatura" },
 ];
 
 const Header = () => {
@@ -99,7 +99,7 @@ const Header = () => {
           <nav>
             <ul>
               {mainHeaderNavigations.map((navigation) => (
-                <li key={navigation.name}>
+                <li key={navigation.id}>
                   <a href="#">{navigation.icon}</a>
                 </li>
               ))}
@@ -110,7 +110,7 @@ const Header = () => {
         <nav className={styles.headerNavbar}>
           <ul>
             {headerNavbarNavigations.map((navigation) => (
-              <li key={navigation.text}>
+              <li key={navigation.id}>
                 <a>
                   {navigation?.icon}
                   {navigation.text}

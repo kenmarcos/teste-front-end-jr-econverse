@@ -1,0 +1,58 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.container {
+  max-width: 574px;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000000 85.04%);
+  mix-blend-mode: normal;
+  opacity: 0.8;
+}
+
+.info {
+  color: variables.$white-color;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+
+  @include mixins.tablet {
+    left: 40px;
+    bottom: 40px;
+  }
+
+  h3 {
+    font-weight: 700;
+    font-size: 40px;
+  }
+
+  span {
+    display: inline-block;
+    max-width: 180px;
+    line-height: 24px;
+    font-size: 1rem;
+
+    @include mixins.tablet {
+      margin-top: 16px;
+    }
+  }
+
+  button {
+    margin-top: 16px;
+    text-transform: uppercase;
+
+    @include mixins.tablet {
+      margin-top: 32px;
+    }
+  }
+}
