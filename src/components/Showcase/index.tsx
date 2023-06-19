@@ -70,7 +70,7 @@ const Showcase = ({ products, isLoading }: ShowcaseProps) => {
 
           {products &&
             products.map((product) => (
-              <ProductCard key={product.productName} {...product} />
+              <ProductCard key={product.productName} product={product} />
             ))}
         </Slider>
       </div>

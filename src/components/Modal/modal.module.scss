@@ -1,0 +1,66 @@
+@use "../../styles/mixins";
+@use "../../styles/variables";
+
+.backdrop {
+  @include mixins.flex-center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(2.5px);
+  z-index: 20;
+}
+
+.modal {
+  background-color: variables.$white-color;
+  padding: 48px 24px;
+  position: relative;
+  margin: 0 16px;
+
+  @include mixins.tablet {
+    min-width: 770px;
+  }
+
+  button {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: variables.$text-secondary-color;
+  }
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  figure {
+    display: flex;
+    justify-content: center;
+    flex: 1;
+
+    img {
+      max-height: 200px;
+      object-fit: cover;
+    }
+  }
+
+  div {
+    @include mixins.flex-column;
+    gap: 16px;
+
+    a {
+      &:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+      }
+    }
+
+    @include mixins.tablet {
+      flex: 1;
+    }
+  }
+}
