@@ -1,0 +1,25 @@
+@use "variables";
+@use "reset";
+@use "mixins";
+
+html {
+  font-size: 87.5%;
+
+  @include mixins.tablet {
+    font-size: 93.75%;
+  }
+
+  @include mixins.large {
+    font-size: 100%;
+  }
+}
+
+body,
+input {
+  font: 400 1rem variables.$font-family;
+  color: variables.$text-primary-color;
+}
+
+button {
+  cursor: pointer;
+}

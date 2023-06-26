@@ -1,0 +1,56 @@
+@use "variables";
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center-horiz {
+  display: flex;
+  justify-content: center;
+}
+
+@mixin flex-center-vert {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-center-column {
+  @include flex-center();
+  flex-direction: column;
+}
+
+@mixin tablet {
+  @media only screen and (min-width: variables.$tablet * 1px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media only screen and (min-width: variables.$large * 1px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: variables.$desktop * 1px) {
+    @content;
+  }
+}
+
+@mixin customContainer {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 24px;
+}

@@ -1,0 +1,36 @@
+@use "../../styles/mixins";
+
+@mixin input {
+  @include mixins.flex-center-vert();
+  margin: 0 auto;
+
+  input {
+    border: none;
+    background-color: transparent;
+    flex: 1;
+  }
+}
+
+.default {
+  @include input();
+
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  padding: 13px 25px;
+
+  input {
+    &::placeholder {
+      color: #c0c0c0;
+    }
+  }
+}
+
+.search {
+  @include input();
+
+  height: 48px;
+  max-width: 657px;
+  background-color: #f7f5f2;
+  border-radius: 10px;
+  padding: 14px 16px 14px 24px;
+}
