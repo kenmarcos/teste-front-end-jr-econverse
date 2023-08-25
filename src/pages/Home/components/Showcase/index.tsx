@@ -1,13 +1,16 @@
 import Slider, { CustomArrowProps } from "react-slick";
 
-import { NextArrowIcon, PrevArrowIcon } from "../../icons";
-import ProductCard from "../ProductCard";
-import ProductCardSkeleton from "../ProductCardSkeleton";
-import { Product } from "../../types";
+import { NextArrowIcon, PrevArrowIcon } from "../../../../icons";
+import ProductCard from "../../../../components/ProductCard";
+import ProductCardSkeleton from "../../../../components/ProductCardSkeleton";
+import { Product } from "../../../../types";
 
 import styles from "./showcase.module.scss";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import axios from "axios";
+import { useQuery } from "@tanstack/react-query";
+import { api } from "../../../../services/axiosInstance";
 
 const sliderSettings = {
   infinite: true,
@@ -41,12 +44,25 @@ const sliderSettings = {
   ],
 };
 
-interface ShowcaseProps {
-  products?: Product[];
-  isLoading: boolean;
+interface Products {
+  success: string;
+  products: Product[];
 }
 
-const Showcase = ({ products, isLoading }: ShowcaseProps) => {
+const getProducts = async () => {
+  const response = await api.get<Products>(
+    "/teste-front-end/junior/tecnologia/lista-produtos/produtos.json"
+  );
+
+  return response.data.products;
+};
+
+const Showcase = () => {
+  const { data, isLoading } = useQuery({
+    queryKey: ["products"],
+    queryFn: getProducts,
+  });
+
   return (
     <section className={styles.container}>
       <div>
@@ -68,8 +84,8 @@ const Showcase = ({ products, isLoading }: ShowcaseProps) => {
               <ProductCardSkeleton key={index} />
             ))}
 
-          {products &&
-            products.map((product) => (
+          {data &&
+            data.map((product) => (
               <ProductCard key={product.productName} product={product} />
             ))}
         </Slider>

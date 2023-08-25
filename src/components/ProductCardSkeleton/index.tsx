@@ -1,5 +1,4 @@
 import Skeleton from "react-loading-skeleton";
-import Button from "../Button";
 
 import styles from "./productCardSkeleton.module.scss";
 import "react-loading-skeleton/dist/skeleton.css";

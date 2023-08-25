@@ -1,0 +1,20 @@
+@use "../../../../styles/mixins";
+@use "../../../../styles/variables";
+
+.navigation {
+  nav {
+    @include mixins.customContainer;
+
+    ul {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      li {
+        @include mixins.flex-center-column;
+        gap: 22px;
+      }
+    }
+  }
+}

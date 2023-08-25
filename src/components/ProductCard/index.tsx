@@ -12,7 +12,7 @@ interface ProductCardProps {
 }
 
 const ProductCard = ({ product }: ProductCardProps) => {
-  const { photo, productName, descriptionShort, price } = product;
+  const { photo, productName, price } = product;
   const [isOpen, setIsOpen] = useState(false);
 
   return (
