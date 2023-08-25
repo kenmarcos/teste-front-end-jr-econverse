@@ -1,12 +1,13 @@
 import styles from "./navigation.module.scss";
-import devices from "../../../../assets/img/devices.svg";
-import market from "../../../../assets/img/market.svg";
-import drinks from "../../../../assets/img/drinks.svg";
-import tools from "../../../../assets/img/tools.svg";
-import care from "../../../../assets/img/care.svg";
-import running from "../../../../assets/img/running.svg";
-import fashion from "../../../../assets/img/fashion.svg";
-import Button from "../../../../components/Button";
+
+import care from "@/assets/img/care.svg";
+import devices from "@/assets/img/devices.svg";
+import drinks from "@/assets/img/drinks.svg";
+import fashion from "@/assets/img/fashion.svg";
+import market from "@/assets/img/market.svg";
+import running from "@/assets/img/running.svg";
+import tools from "@/assets/img/tools.svg";
+import Button from "@/components/Button";
 
 const navigation = [
   { id: 1, icon: devices, name: "Tecnologia" },

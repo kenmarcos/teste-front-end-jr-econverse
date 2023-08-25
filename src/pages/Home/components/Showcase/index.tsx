@@ -1,16 +1,16 @@
 import Slider, { CustomArrowProps } from "react-slick";
 
-import { NextArrowIcon, PrevArrowIcon } from "../../../../icons";
-import ProductCard from "../../../../components/ProductCard";
-import ProductCardSkeleton from "../../../../components/ProductCardSkeleton";
-import { Product } from "../../../../types";
-
 import styles from "./showcase.module.scss";
+
+import ProductCard from "@/components/ProductCard";
+import ProductCardSkeleton from "@/components/ProductCardSkeleton";
+import { NextArrowIcon, PrevArrowIcon } from "@/icons";
+import { api } from "@/services/axiosInstance";
+import { Product } from "@/types";
+import { useQuery } from "@tanstack/react-query";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import axios from "axios";
-import { useQuery } from "@tanstack/react-query";
-import { api } from "../../../../services/axiosInstance";
 
 const sliderSettings = {
   infinite: true,

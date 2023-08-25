@@ -1,9 +1,9 @@
 import Slider, { CustomArrowProps } from "react-slick";
 
-import Logotype from "/logotype.svg";
-import { NextArrowIcon, PrevArrowIcon } from "../../icons";
-
 import styles from "./brandCarousel.module.scss";
+
+import { NextArrowIcon, PrevArrowIcon } from "@/icons";
+import Logotype from "/logotype.svg";
 
 const sliderSettings = {
   infinite: true,

@@ -1,17 +1,15 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
-
-import Showcase from "./components/Showcase";
-import { Product } from "../../types";
-import Advertisements from "./components/Advertisements";
-import AdCard from "../../components/AdCard";
-
 import styles from "./home.module.scss";
+
+import Advertisements from "./components/Advertisements";
+import Banner from "./components/Banner";
+import Brands from "./components/Brands";
+import Navigation from "./components/Navigation";
+import Showcase from "./components/Showcase";
+
+import AdCard from "@/components/AdCard";
+
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Banner from "./components/Banner";
-import Navigation from "./components/Navigation";
-import Brands from "./components/Brands";
 
 const Home = () => {
   return (

@@ -1,6 +1,7 @@
-import Button from "../../../../components/Button";
 import styles from "./banner.module.scss";
-import BannerImage from "../../../../assets/img/banner.png";
+
+import BannerImage from "@/assets/img/banner.png";
+import Button from "@/components/Button";
 
 const Banner = () => {
   return (

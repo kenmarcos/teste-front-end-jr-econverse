@@ -1,8 +1,11 @@
 import { createPortal } from "react-dom";
+
 import styles from "./modal.module.scss";
+
 import Button from "../Button";
-import { Product } from "../../types";
-import { formatPrice } from "../../utils/formats";
+
+import { Product } from "@/types";
+import { formatPrice } from "@/utils/formats";
 
 interface ModalProps {
   isOpen: boolean;

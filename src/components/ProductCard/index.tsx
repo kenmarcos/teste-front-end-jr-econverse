@@ -1,11 +1,12 @@
 import { useState } from "react";
 
-import { Product } from "../../types";
-import { formatPrice } from "../../utils/formats";
-import Button from "../Button";
-
 import styles from "./productCard.module.scss";
+
+import Button from "../Button";
 import Modal from "../Modal";
+
+import { Product } from "@/types";
+import { formatPrice } from "@/utils/formats";
 
 interface ProductCardProps {
   product: Product;

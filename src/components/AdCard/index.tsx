@@ -1,7 +1,8 @@
-import StoreImage from "../../assets/img/store.png";
+import styles from "./adCard.module.scss";
+
 import Button from "../Button";
 
-import styles from "./adCard.module.scss";
+import StoreImage from "@/assets/img/store.png";
 
 interface AdCardProps {
   title: string;

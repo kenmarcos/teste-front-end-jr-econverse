@@ -1,11 +1,12 @@
+import styles from "./footer.module.scss";
+
+import Button from "../Button";
+import Input from "../Input";
+
+import PaymentMethods from "@/assets/img/payment-methods.svg";
+import { FacebookIcon, InstagramIcon, YoutubeIcon } from "@/icons";
 import Econverse from "/econverse.svg";
 import Vtex from "/vtex.svg";
-import { FacebookIcon, InstagramIcon, YoutubeIcon } from "../../icons";
-import Input from "../Input";
-import Button from "../Button";
-import PaymentMethods from "../../assets/img/payment-methods.svg";
-
-import styles from "./footer.module.scss";
 
 const Footer = () => {
   return (

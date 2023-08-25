@@ -1,3 +1,8 @@
+import styles from "./header.module.scss";
+
+import Button from "../Button";
+import Input from "../Input";
+
 import {
   BoxIcon,
   CreditCardIcon,
@@ -8,12 +13,8 @@ import {
   UserCircleIcon,
   MagnifyingGlassIcon,
   CrownIcon,
-} from "../../icons";
-import Input from "../Input";
-import Button from "../Button";
+} from "@/icons";
 import Logotype from "/logotype.svg";
-
-import styles from "./header.module.scss";
 
 const informations = [
   {

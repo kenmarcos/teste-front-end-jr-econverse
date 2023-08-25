@@ -1,5 +1,6 @@
-import BrandCarousel from "../../../../components/BrandCarousel";
 import styles from "./brands.module.scss";
+
+import BrandCarousel from "@/components/BrandCarousel";
 
 const Brands = () => {
   return (
