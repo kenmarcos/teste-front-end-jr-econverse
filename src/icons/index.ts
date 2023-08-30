@@ -1,17 +1,17 @@
-import ShieldCheckIcon from "./ShieldCheckIcon";
-import TruckIcon from "./TruckIcon";
-import CreditCardIcon from "./CreditCardIcon";
 import BoxIcon from "./BoxIcon";
-import HeartIcon from "./HeartIcon";
-import UserCircleIcon from "./UserCircleIcon";
-import ShoppinCartIcon from "./ShoppingCartIcon";
-import MagnifyingGlassIcon from "./MagnifyingGlassIcon";
+import CreditCardIcon from "./CreditCardIcon";
 import CrownIcon from "./CrownIcon";
 import FacebookIcon from "./FacebookIcon";
+import HeartIcon from "./HeartIcon";
 import InstagramIcon from "./InstagramIcon";
-import YoutubeIcon from "./YoutubeIcon";
-import PrevArrowIcon from "./PrevArrowIcon";
+import MagnifyingGlassIcon from "./MagnifyingGlassIcon";
 import NextArrowIcon from "./NextArrowIcon";
+import PrevArrowIcon from "./PrevArrowIcon";
+import ShieldCheckIcon from "./ShieldCheckIcon";
+import ShoppinCartIcon from "./ShoppingCartIcon";
+import TruckIcon from "./TruckIcon";
+import UserCircleIcon from "./UserCircleIcon";
+import YoutubeIcon from "./YoutubeIcon";
 
 export {
   ShieldCheckIcon,
